@@ -26,9 +26,9 @@ function setupIntialValues() {
     years: document.getElementById("loan-years"),
     rate: document.getElementById("loan-rate"),
   };
-  defaultValues.amount.innerText = "0";
-  defaultValues.years.innerText = "0";
-  defaultValues.rate.innerText = "0";
+  defaultValues.amount.innerText = "10000";
+  defaultValues.years.innerText = "2";
+  defaultValues.rate.innerText = ".02";
   return calculateMonthlyPayment(defaultValues);
 }
 
