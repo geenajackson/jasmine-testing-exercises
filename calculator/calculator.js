@@ -26,17 +26,20 @@ function setupIntialValues() {
     years: document.getElementById("loan-years"),
     rate: document.getElementById("loan-rate"),
   };
-  defaultValues.amount.innerText = "10000";
-  defaultValues.years.innerText = "2";
-  defaultValues.rate.innerText = ".02";
-  return calculateMonthlyPayment(defaultValues);
+  defaultValues.amount.defaultValue = 10000;
+  defaultValues.years.defaultValue = 2;
+  defaultValues.rate.defaultValue = .02;
+  defaultValues.amount = 10000;
+  defaultValues.years = 2;
+  defaultValues.rate = .02;
+  return updateMonthly(calculateMonthlyPayment(defaultValues));
 }
 
 // Get the current values from the UI
 // Update the monthly payment
 function update() {
   let currentValues = getCurrentUIValues();
-  return calculateMonthlyPayment(currentValues);
+  return updateMonthly(calculateMonthlyPayment(currentValues));
 }
 
 // Given an object of values (a value has amount, years and rate ),
@@ -53,4 +56,7 @@ function calculateMonthlyPayment(values) {
 // Given a string representing the monthly payment value,
 // update the UI to show the value.
 function updateMonthly(monthly) {
+  let payment = document.getElementById("monthly-payment");
+  payment.innerText = monthly;
+  return monthly;
 }

@@ -9,5 +9,3 @@ it("should return a result with 2 decimal places", function () {
   expect(calculateMonthlyPayment({ amount: 10000, years: 4, rate: 0.03125, })).toEqual("221.90");
   expect(calculateMonthlyPayment({ amount: 15600, years: 2, rate: 0.0425, })).toEqual("679.17");
 });
-
-/// etc
